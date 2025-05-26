@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Movie List Website",
+    "desc": "A simple and responsive movie list application built with React.js allows users to search for movies.",
+    "image": "movieweb",
+    "category": "basicweb",
+    "links": {
+      "view": "https://movielistweb.netlify.app/",
+      "code": "https://github.com/jigar-sable/notystack-android"
+    }
+  },
+  {
+    "name": "Trails Landing Page",
+    "desc": "Landing Page for Trails App. Built using HTML, CSS, Javascript.",
+    "image": "trails",
+    "category": "basicweb",
+    "links": {
+      "view": "https://trails-capstoneproject.et.r.appspot.com/",
+      "code": "https://github.com/Capstone-Project-Trails/landing-page"
+    }
+  },
+  {
+    "name": "Basic Student Data Management",
+    "desc": "A simple desktop application for student data management, featuring a login system and CRUD (Create, Read, Update, Delete) functionalities for attendance and grade data. .",
+    "image": "guipemlan",
+    "category": "python",
+    "links": {
+      "view": "https://github.com/jeremyfasollasido/Basic-Student-Data-Management",
+      "code": "https://github.com/jeremyfasollasido/Basic-Student-Data-Management"
+    }
+  },
+  {
+    "name": "Smart Watering IoT Website",
+    "desc": "A simple webiste for monitoring the automatic plant watetring. Built using HTML, Javascript, CSS .",
+    "image": "iotwatering",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jeremyfasollasido.github.io/smart-watering-iot/",
+      "code": "https://github.com/jeremyfasollasido/smart-watering-iot/tree/main/docs"
+    }
+  },
+  {
+    "name": "Smart Watering IoT",
+    "desc": "IoT for Smart Garden Watering to that help us to watering our plant.Build Using ESP32",
+    "image": "iotwatering",
+    "category": "embed",
+    "links": {
+      "view": "https://instagramernstack.herokuapp.com/",
+      "code": "https://github.com/jeremyfasollasido/smart-watering-iot"
+    }
+  },
+  {
+    "name": "Math Calculator ",
+    "desc": "Simple website that help us to calculate the shape's area and circumference. Build Using HTML, CSS & Javascript .",
+    "image": "mathcalculator",
+    "category": "basicweb",
+    "links": {
+      "view": "https://jeremyfasollasido.github.io/jeremya.github.io/",
+      "code": "https://github.com/jeremyfasollasido/jeremya.github.io"
+    }
+  },
+  {
+    "name": "Automatic Pet Feeder",
+    "desc": "Embedded System using arduino to make an automatic petfeeder and we can set the time manually",
+    "image": "automatic",
+    "category": "embed",
+    "links": {
+      "view": "https://github.com/jeremyfasollasido/pet-feeder",
+      "code": "https://github.com/jeremyfasollasido/pet-feeder"
+    }
+  },
+  {
+    "name": "Simple Pokemon Game",
+    "desc": "Full-Stack project dashboard which is collection of projects built on the React library.",
+    "image": "pokemon",
+    "category": "python",
+    "links": {
+      "view": "https://github.com/jeremyfasollasido/simple-pokemon-game-pygame",
+      "code": "https://github.com/jeremyfasollasido/simple-pokemon-game-pygame"
+    }
+  },
+  {
+    "name": "Human Detection & Human's Expression Detection",
+    "desc": "This project is made with Python and using machine learning to train the model that detect the object.",
+    "image": "guidetect",
+    "category": "ml",
+    "links": {
+      "view": "https://github.com/jeremyfasollasido/Human-and-Human-s-Expression-Detection-with-GUI",
+      "code": "https://github.com/jeremyfasollasido/Human-and-Human-s-Expression-Detection-with-GUI"
+    }
+  },
+  {
+    "name": "Trails API",
+    "desc": "Apps for destinations recommendation. With all major features and authentication, nearby and favorite destination",
+    "image": "apitrails",
+    "category": "backend",
+    "links": {
+      "view": "https://drive.google.com/file/d/1fohPXZCuSbm_lJal2d-2l3BfdUHzyjBL/view",
+      "code": "https://github.com/Capstone-Project-Trails/recommendation-api"
+    }
+  },
+  {
+    "name": "E-commerce Sales Performance Analysis",
+    "desc": "Website data analysis that's made using streamlit with python",
+    "image": "ecommerce",
+    "category": "python",
+    "links": {
+      "view": "https://e-commerce-sales-performance-analysis-eauepvwimusv3ehyp9no4w.streamlit.app",
+      "code": "https://github.com/jeremyfasollasido/E-commerce-Sales-Performance-Analysis"
+    }
+  }
+]

@@ -1,0 +1,575 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+/* --- Color Palette --- */
+:root {
+  --primary-color: #4CAF50; /* A soft, calming green */
+  --secondary-color: #FFC107; /* A warm, inviting amber */
+  --accent-color: #2196F3;   /* A friendly, bright blue */
+  --text-color: #424242;     /* A deep, readable gray */
+  --secondary-text-color: #757575; /* A lighter, subtle gray */
+  --background-color: #F8F8F8; /* A light, airy off-white */
+  --secondary-background-color: #EEEEEE; /* A slightly darker off-white for contrast */
+  --light-color: #FFFFFF;    /* Pure white for clean elements */
+  --dark-color: #212121;     /* A very dark gray for strong contrast */
+}
+
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease; /* Smooth transitions for all elements */
+}
+
+html {
+  font-size: 62.5%; /* Base font size for responsive scaling */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  background: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+/* Custom selection color */
+*::selection {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Custom scrollbar styling */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--secondary-background-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 0.5rem;
+}
+
+/* --- Navbar Starts --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 8%; /* Adjusted padding for a cleaner look */
+  height: 7rem; /* Fixed height for the header */
+  background-color: var(--light-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* Shared section padding for consistency */
+section {
+  min-height: 100vh;
+  padding: 3rem 9%; /* Increased section padding for more breathing room */
+}
+
+/* Main heading style */
+.heading {
+  font-size: 4rem; /* Larger heading font size */
+  color: var(--text-color);
+  font-weight: 700;
+  text-align: center;
+}
+
+.heading span {
+  color: var(--primary-color); /* Highlighted text with primary color */
+}
+
+/* Logo styling */
+header .logo {
+  font-size: 2.2rem; /* Larger logo font size */
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+header .logo i {
+  font-size: 2.5rem; /* Larger icon in logo */
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+header .logo:hover {
+  color: var(--primary-color);
+}
+
+/* Navbar links */
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .navbar li {
+  margin-left: 3rem; /* Increased spacing between nav items */
+}
+
+header .navbar ul li a {
+  font-size: 1.6rem; /* Adjusted link font size */
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  position: relative; /* For underline effect */
+  padding: 0.8rem 0; /* Vertical padding for active/hover */
+}
+
+/* Underline effect for navbar links */
+header .navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.2rem;
+  background: var(--primary-color);
+  transition: width 0.3s ease; /* Smooth transition for underline */
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
+header .navbar ul li a:hover::after,
+header .navbar ul li a.active::after {
+  width: 100%; /* Expands underline on hover/active */
+}
+/* --- Navbar Ends --- */
+
+/* --- Hamburger Icon Starts --- */
+#menu {
+  font-size: 3.5rem; /* Larger hamburger icon */
+  cursor: pointer;
+  color: var(--primary-color);
+  display: none; /* Hidden on larger screens */
+}
+
+@media(max-width:768px){
+  #menu{
+    display: block; /* Shows hamburger on mobile */
+  }
+  header .navbar{
+    position: fixed;
+    top: 7rem; /* Adjusted for taller header */
+    right: -120%; /* Off-screen initially */
+    width: 80%; /* Wider mobile nav */
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: var(--dark-color); /* Darker background for mobile nav */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease; /* Smooth slide-in */
+  }
+  header .navbar ul{
+    flex-flow: column; /* Stacks links vertically */
+    padding: 2rem; /* More padding in mobile nav */
+  }
+  header .navbar ul li{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0; /* More vertical spacing */
+    border-radius: .5rem;
+    max-width: 30rem; /* Max width for mobile nav items */
+  }
+  header .navbar ul li a{
+    display: block;
+    padding: 1.5rem; /* Larger touch area */
+    text-align: left;
+    color: var(--light-color);
+    font-size: 2.2rem; /* Larger mobile link font size */
+  }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover{
+    padding: 1.5rem;
+    color: var(--light-color);
+    border-radius: .5rem;
+    background: var(--primary-color); /* Solid background on hover/active for mobile */
+    border-bottom: none; /* No bottom border on mobile */
+  }
+  .fa-times{
+    transform: rotate(90deg); /* Different rotation for close icon */
+  }
+  header .navbar.nav-toggle{
+    right: 0; /* Slides in the navbar */
+  }
+}
+/* --- Hamburger Icon Ends --- */
+
+/* --- Experience Section Starts --- */
+.experience {
+  margin-top: 5rem;
+  background: var(--background-color); /* Use background color from palette */
+  padding-bottom: 5rem; /* Add padding at the bottom */
+}
+.experience .quote {
+  text-align: center;
+  font-size: 1.8rem; /* Larger quote font size */
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  margin-bottom: 3rem; /* More space below quote */
+}
+.experience .timeline {
+  position: relative;
+  max-width: 1000px; /* Slightly narrower timeline */
+  margin: 2rem auto;
+}
+.experience .timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px; /* Thinner timeline line */
+  background: var(--primary-color); /* Primary color for timeline line */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Adjusted to match thinner line */
+  z-index: 0; /* Lower z-index to avoid issues with circles */
+}
+.experience .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+/* Circles on timeline */
+.experience .container::after {
+  content: "\f0a9"; /* Paper plane icon (Font Awesome) */
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900; /* For solid icon */
+  position: absolute;
+  width: 30px; /* Larger circles */
+  height: 30px;
+  right: -19px; /* Adjusted position */
+  background-color: var(--light-color);
+  border: 4px solid var(--primary-color); /* Primary color border */
+  top: 25px; /* Adjusted position */
+  border-radius: 50%;
+  z-index: 1; /* Higher z-index for circles */
+  font-size: 1.6rem; /* Adjusted icon size */
+  text-align: center;
+  line-height: 22px; /* Center icon vertically */
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.experience .left {
+  left: 0;
+}
+.experience .right {
+  left: 50%;
+}
+/* Arrows pointing right */
+.experience .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 35px; /* Adjusted position */
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--primary-color); /* Primary color arrow */
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--primary-color);
+}
+/* Arrows pointing left  */
+.experience .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 35px; /* Adjusted position */
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--primary-color); /* Primary color arrow */
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--primary-color) transparent transparent;
+}
+.experience .right::after {
+  left: -19px; /* Adjusted position */
+}
+.experience .content {
+  background-color: var(--secondary-background-color); /* Light background for content boxes */
+  position: relative;
+  border-radius: 8px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  padding: 2rem; /* More padding */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experience .content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.experience .content .tag{
+  font-size: 1.4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.8rem; /* Space below tag */
+  color: var(--primary-color); /* Primary color tag */
+  font-weight: 600;
+  border-bottom: 1px solid var(--background-color); /* Subtle separator */
+  margin-bottom: 1rem;
+}
+.experience .content .desc{
+  margin-left: 0; /* Remove left margin to fit padding */
+  padding-bottom: 1rem;
+  color: var(--secondary-text-color); /* Secondary text color */
+}
+.experience .content .desc h3{
+  font-size: 1.8rem; /* Larger description heading */
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+.experience .content .desc p{
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+/* View all button */
+.morebtn{
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem; /* More space above button */
+  margin-bottom: 5rem; /* More space below button */
+}
+.morebtn .btn {
+  position: relative;
+  line-height: 0;
+  padding: 1.8rem 3.5rem; /* Larger button */
+  border-radius: .8em; /* More rounded corners */
+  background: var(--primary-color);
+  box-shadow: 0px 8px 20px rgba(76, 175, 80, 0.4); /* Shadow from primary color */
+  font-family: 'Nunito', sans-serif;
+  color: var(--light-color);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.08rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+.morebtn .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.morebtn .btn:hover::before {
+  left: 0; /* Slide-in effect */
+}
+.morebtn .btn i {
+  margin-right: 0.8rem; /* More space for icon */
+  font-size: 1.7rem; /* Larger icon */
+  transition: transform 0.3s ease;
+}
+.morebtn .btn:hover i {
+  transform: translateX(-8px); /* Icon moves left on hover */
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .experience .timeline::after {
+  left: 20px; /* Adjust timeline line position */
+  }
+  .experience .container {
+  width: 100%;
+  padding-left: 60px; /* Adjust padding for content */
+  padding-right: 10px;
+  }
+  .experience .container::before {
+  left: 40px; /* Adjust arrow position */
+  border: medium solid var(--primary-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--primary-color) transparent transparent;
+  }
+  .experience .left::after {
+    left: 8px; /* Adjust circle position */
+  }
+  .experience .right::after {
+    left: 8px; /* Adjust circle position */
+  }
+  .experience .right {
+  left: 0%;
+  }
+  .experience .container::after {
+    font-size: 2rem;; /* Larger icon on mobile */
+  }
+}
+/* --- Experience Media Queries Ends --- */
+/* --- Experience Section Ends --- */
+
+
+/* --- Footer Section Starts --- */
+.footer{
+  min-height: auto;
+  padding-top: 3rem; /* More padding at the top */
+  background: var(--dark-color); /* Dark background for footer */
+  color: var(--light-color);
+}
+.footer .box-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 5%; /* Adjusted padding */
+}
+.footer .box-container .box{
+  flex: 1 1 28rem; /* Slightly larger flex basis */
+  margin: 2.5rem; /* More margin around boxes */
+}
+.footer .box-container .box h3{
+  font-size: 2.6rem; /* Larger heading */
+  color: var(--light-color);
+  padding-bottom: 1.5rem; /* More padding below heading */
+  font-weight: 700; /* Bolder heading */
+}
+.footer .box-container .box p{
+  font-size: 1.6rem; /* Larger paragraph font */
+  color: var(--secondary-background-color); /* Lighter gray for text */
+  padding: 0.8rem 0; /* More vertical padding */
+  text-transform: none;
+  line-height: 1.8;
+}
+.footer .box-container .box p i{
+  padding-right: 1rem;
+  color: var(--secondary-color); /* Amber icon color */
+}
+.footer .box-container .box a{
+  font-size: 1.6rem;
+  color: var(--background-color); /* Slightly darker white for links */
+  padding: 0.5rem 0;
+  display: block;
+  transition: color 0.3s ease;
+}
+.footer .box-container .box a:hover{
+  color: var(--secondary-color); /* Amber on hover */
+}
+.footer .box-container .box .share{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 0; /* More padding */
+  gap: 1.2rem; /* Spacing between share icons */
+}
+.footer .box-container .box .share a{
+  height: 4.5rem; /* Larger share icons */
+  width: 4.5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  background: var(--secondary-text-color); /* Darker gray for icons */
+  color: var(--light-color);
+  border: 1px solid transparent; /* Subtle border */
+}
+.footer .box-container .box .share a:hover{
+  background: transparent;
+  transform: translateY(-5px); /* Lift effect */
+  border-color: var(--secondary-color); /* Amber border on hover */
+  color: var(--secondary-color);
+}
+.footer .credit{
+  padding: 2rem 0; /* More padding for credit */
+  text-align: center;
+  font-size: 1.6rem; /* Larger credit font size */
+  font-family: 'Nunito',sans-serif;
+  font-weight: 500;
+  color: var(--secondary-background-color);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.08); /* Lighter border */
+}
+.footer .credit a{
+  color: var(--secondary-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.footer .credit a:hover{
+  color: var(--light-color);
+}
+.footer .fa{
+    color: #EF5350; /* A soft red for the heart icon */
+    margin: 0 .5rem;
+    font-size: 1.6rem;
+    animation: pound .5s infinite alternate; /* Slower pound animation */
+}
+@-webkit-keyframes pound{
+  to{
+    transform: scale(1.2);
+  }
+}
+@keyframes pound{
+  to{
+    transform: scale(1.2);
+}
+}
+@media(max-width:450px){
+  .footer .box-container .box{
+    margin: 2rem;
+    text-align: center;
+  }
+  .footer .box-container .box p{
+    padding: 0.7rem;
+  }
+  .footer .box-container .box .share a{
+    padding: 1.1rem;
+  }
+}
+/* --- Footer Section Ends --- */
+
+/* --- Common Media Queries --- */
+@media(max-width:450px){
+  html{
+    font-size: 55%;
+  }
+  body{
+    padding-right: 0;
+  }
+  section{
+    padding: 2rem;
+  }
+}
+/* --- Common Media Queries Ends --- */
+
+
+/* --- Scroll Top Starts --- */
+#scroll-top{
+  position: fixed;
+  top: -140%;
+  right: 2.5rem; /* Adjusted right position */
+  padding: 1.2rem 1.8rem; /* Larger padding */
+  font-size: 2.2rem; /* Larger icon */
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  transition: all 0.5s ease; /* Smoother transition */
+  z-index: 999; /* Higher z-index */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#scroll-top.active{
+  top: calc(100% - 9rem); /* Adjusted active position */
+  opacity: 1;
+}
+#scroll-top:hover{
+  background: #388E3C; /* Darker green on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+/* --- Scroll Top Ends --- */
