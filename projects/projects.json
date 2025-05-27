@@ -108,5 +108,16 @@
       "view": "https://e-commerce-sales-performance-analysis-eauepvwimusv3ehyp9no4w.streamlit.app",
       "code": "https://github.com/jeremyfasollasido/E-commerce-Sales-Performance-Analysis"
     }
+  },
+  {
+    "name": "E-commerce Sales Performance Analysis",
+    "desc": "Portofolio Website of me that's made using html, css and javascript ",
+    "image": "portofolio",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/jeremyfasollasido/Portofolio-Website"
+    }
   }
+
 ]
